@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"strconv"
 
-	"sw-sdk-golang/swsdk"
+	"github.com/lunasoft/sw-sdk-go/swsdk"
 )
 
 // RequestHelper maneja las peticiones HTTP para usuarios

@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"sw-sdk-golang/swsdk/autenticacion"
+	"github.com/lunasoft/sw-sdk-go/swsdk/autenticacion"
 )
 
 func TestCancelacionPorUUID(t *testing.T) {

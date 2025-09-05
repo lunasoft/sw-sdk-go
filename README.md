@@ -23,7 +23,7 @@ SDK oficial de SW (Servicios Web) para Go que permite interactuar con los servic
 ## Instalación
 
 ```bash
-go get github.com/david-reyes/sw-sdk-golang
+go get github.com/lunasoft/sw-sdk-go
 ```
 
 ### Requisitos

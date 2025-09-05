@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"sw-sdk-golang/swsdk/autenticacion"
-	"sw-sdk-golang/swsdk/helpers"
+	"github.com/lunasoft/sw-sdk-go/swsdk/autenticacion"
+	"github.com/lunasoft/sw-sdk-go/swsdk/helpers"
 )
 
 func TestStampV1(t *testing.T) {

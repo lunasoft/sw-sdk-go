@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"sw-sdk-golang/swsdk"
-	"sw-sdk-golang/swsdk/autenticacion"
+	"github.com/lunasoft/sw-sdk-go/swsdk"
+	"github.com/lunasoft/sw-sdk-go/swsdk/autenticacion"
 )
 
 func main() {

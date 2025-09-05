@@ -1,4 +1,4 @@
-module sw-sdk-golang
+module github.com/lunasoft/sw-sdk-go
 
 go 1.21.0
 

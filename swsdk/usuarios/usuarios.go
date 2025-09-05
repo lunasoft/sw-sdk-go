@@ -1,7 +1,7 @@
 package usuarios
 
 import (
-	"sw-sdk-golang/swsdk/autenticacion"
+	"github.com/lunasoft/sw-sdk-go/swsdk/autenticacion"
 )
 
 // Usuario representa un usuario del sistema

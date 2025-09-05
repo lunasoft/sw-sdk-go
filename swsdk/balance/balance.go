@@ -1,7 +1,7 @@
 package balance
 
 import (
-	"sw-sdk-golang/swsdk/autenticacion"
+	"github.com/lunasoft/sw-sdk-go/swsdk/autenticacion"
 )
 
 // AddStamps añade timbres a un usuario específico

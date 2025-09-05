@@ -3,7 +3,7 @@ package usuarios
 import (
 	"testing"
 
-	"sw-sdk-golang/swsdk/autenticacion"
+	"github.com/lunasoft/sw-sdk-go/swsdk/autenticacion"
 )
 
 func TestCrearUsuario(t *testing.T) {
