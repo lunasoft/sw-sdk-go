@@ -3,8 +3,7 @@
 SDK oficial de SW (Servicios Web) para Go que permite interactuar con los servicios.
  
 **Versión:** 1.1.0  
-**Licencia:** MIT  
-**Desarrollador:** David Ernesto Reyes Ayala
+**Licencia:** MIT
 
 ## Características
 
@@ -487,9 +486,9 @@ if err != nil {
 
 ## Soporte
 
-**Desarrollador:** David Ernesto Reyes Ayala  
-**Email:** david.reyes@sw.com.mx  
-**GitHub:** [david-reyes/sw-sdk-golang](https://github.com/david-reyes/sw-sdk-golang)
+**Repositorio:** [lunasoft/sw-sdk-go](https://github.com/lunasoft/sw-sdk-go)
+**Colaborador:** David Ernesto Reyes Ayala  
+
 
 Para soporte técnico o reportar bugs:
 1. Revisar la sección de Troubleshooting
