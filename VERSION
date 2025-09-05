@@ -1,0 +1,70 @@
+SW SDK Go - Version Information
+================================
+
+Version: 1.1.0
+Release Date: 2025-01-04
+Go Version: 1.21.0+
+
+Developer Information:
+----------------------
+Name: David Ernesto Reyes Ayala
+GitHub: 
+Organization: SW (Servicios Web)
+
+Project Information:
+-------------------
+Name: SW SDK Go
+Description: SDK oficial de SW (Servicios Web) para Go que permite interactuar con los servicios.
+License: MIT
+Repository: 
+
+Features:
+---------
+✅ Autenticación con token infinito y tradicional
+✅ Emisión de CFDI (4 versiones)
+✅ Timbrado de CFDI (4 versiones)
+✅ Cancelación de CFDI (4 métodos)
+✅ Gestión de usuarios (CRUD completo)
+✅ Gestión de balance/timbres
+✅ Validación de CFDI
+✅ Consulta de estatus CFDI
+✅ Tests completos
+✅ Documentación completa
+
+Changelog:
+----------
+v1.1.0 (2025-01-04):
+- 🔑 Sistema de Token Infinito
+- ✅ Fallback automático a autenticación tradicional
+- ✅ Función SetUserWithToken() para tokens fijos
+- 🔧 Variables de Entorno para configuración segura
+- ✅ Soporte para archivo .env
+- ✅ Sin credenciales hardcodeadas
+- ✅ Mejoras en configuración
+- ✅ Tests actualizados
+- ✅ Documentación mejorada
+
+v1.0.0 (2025-01-04):
+- ✅ Implementación inicial del SDK
+- ✅ Todas las funcionalidades básicas
+- ✅ Tests completos
+- ✅ Documentación inicial
+
+Installation:
+-------------
+go get 
+
+Requirements:
+- Go 1.21.0 or higher
+- Access to SW services (test or production)
+- Valid credentials or infinite token
+
+Support:
+--------
+For technical support or bug reports:
+1. Check the Troubleshooting section in README
+2. Create an issue on GitHub
+3. Contact the developer
+
+Copyright (c) 2025 
+Licensed under the MIT License
