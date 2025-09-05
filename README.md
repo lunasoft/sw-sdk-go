@@ -3,17 +3,20 @@
 SDK oficial de SW (Servicios Web) para Go que permite interactuar con los servicios.
  
 **Versión:** 1.1.0  
-**Licencia:** MIT
+**Licencia:** MIT  
+**Desarrollador:** David Ernesto Reyes Ayala
 
 ## Características
 
-- ✅ **Autenticación** - Gestión de tokens de acceso
+- ✅ **Autenticación** - Gestión de tokens de acceso con soporte para token infinito
 - ✅ **Emisión (Issue)** - 4 versiones de respuesta (v1, v2, v3, v4)
 - ✅ **Timbrado (Stamp)** - 4 versiones de respuesta (v1, v2, v3, v4)
 - ✅ **Cancelación** - 4 métodos de cancelación (UUID, CSD, PFX, XML)
 - ✅ **Gestión de Usuarios** - Operaciones CRUD completas
 - ✅ **Gestión de Balance** - Añadir, consultar y eliminar timbres
 - ✅ **Validación CFDI** - Validar archivos XML de CFDI
+- ✅ **Consulta de Estatus** - Consultar estatus de CFDI en el SAT
+- ✅ **Variables de Entorno** - Configuración segura mediante variables de entorno
 - ✅ **Manejo de errores** robusto
 - ✅ **Tests** completos para todas las funcionalidades
 
