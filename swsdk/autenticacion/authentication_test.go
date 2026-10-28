@@ -2,6 +2,8 @@ package autenticacion
 
 import (
 	"testing"
+
+	_ "github.com/lunasoft/sw-sdk-go/internal/testsupport"
 )
 
 // Espera HTTP 200 y token válido

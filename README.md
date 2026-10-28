@@ -2,7 +2,7 @@
 
 SDK oficial de SW (Servicios Web) para Go que permite interactuar con los servicios.
  
-**Versión:** 1.1.0  
+**Versión:** 1.2.0  
 **Licencia:** MIT
 
 ## Características
@@ -27,7 +27,7 @@ go get github.com/lunasoft/sw-sdk-go
 
 ### Requisitos
 
-- Go 1.21.0 o superior
+- Go: versión mínima compatible 1.21.0. Se recomienda compilar con una versión de Go con parches de seguridad vigentes (1.26.10 o superior)
 - Acceso a los servicios de SW (test o producción)
 - Credenciales válidas o token infinito
 
@@ -61,6 +61,7 @@ SW_TOKEN=tu-token-infinito-aqui
 | `SW_USER` | Usuario para autenticación | (vacío) |
 | `SW_PASSWORD` | Contraseña para autenticación | (vacío) |
 | `SW_TOKEN` | Token infinito/fijo | (vacío) |
+| `SW_TIMEOUT` | Tiempo máximo de cada petición HTTP, en segundos (`0` = sin límite; un valor inválido usa `30`) | `30` |
 
 ### 🔄 Configuración Programática
 
@@ -74,6 +75,8 @@ config := swsdk.LoadConfig()
 config.User = "otro-usuario@sw.com.mx"
 config.Token = "otro-token"
 ```
+
+El timeout de las peticiones se configura con `SW_TIMEOUT`; asignar `config.Timeout` no lo modifica.
 
 ### 🔑 Sistema de Autenticación
 
@@ -424,16 +427,17 @@ go test ./swsdk/validacion -v
 
 ### Notas sobre las pruebas
 
-- Las pruebas de **emisión** y **timbrado** requieren XML sellado válido
+- Las pruebas de **timbrado** requieren XML sellado válido y están omitidas (`t.Skip()`)
 - Las pruebas de **cancelación** requieren certificados válidos
-- Las pruebas de **usuarios** tienen algunos tests con `t.Skip()` por restricciones del API
+- Las pruebas de **usuarios** usan una cuenta de pruebas fija; las de crear y eliminar tienen `t.Skip()`
 - Las pruebas de **balance** funcionan correctamente y muestran información detallada
 - Las pruebas de **validación** funcionan correctamente con archivos XML reales
+- Las pruebas se ejecutan con la hora de la Ciudad de México, la que valida el servicio
 - Para skipear pruebas problemáticas: `go test -skip`
 
 ## Requisitos
 
-- Go 1.19 o superior
+- Go 1.21.0 o superior
 - Acceso a los servicios de SW (credenciales válidas)
 
 ## Licencia
@@ -496,6 +500,12 @@ Para soporte técnico o reportar bugs:
 3. Contactar al desarrollador
 
 ## Changelog
+
+### v1.2.0 (2026-10-27)
+- Toolchain actualizado a Go 1.26.10
+- Timeout de 30 s (antes sin límite) en las peticiones de emisión, timbrado, cancelación y usuarios; se ajusta con `SW_TIMEOUT` (`0` = sin límite)
+- Pruebas: hora de México y cuenta de usuario fija
+- CI con GitHub Actions
 
 ### v1.1.0 (2025-01-04)
 - 🔑 **NUEVO**: Sistema de Token Infinito
