@@ -1,8 +1,11 @@
 package usuarios
 
 import (
+	"fmt"
 	"testing"
+	"time"
 
+	_ "github.com/lunasoft/sw-sdk-go/internal/testsupport"
 	"github.com/lunasoft/sw-sdk-go/swsdk/autenticacion"
 )
 
@@ -77,6 +80,9 @@ func TestListarUsuarios(t *testing.T) {
 	}
 }
 
+// usuarioPruebaID es la cuenta hija fija de pruebas (sandbox, 0 timbres).
+const usuarioPruebaID = "29208a11-d22a-4e22-8c0f-35cd4a173e74"
+
 func TestActualizarUsuario(t *testing.T) {
 	client := autenticacion.SetUser()
 	_, err := client.Autenticacion()
@@ -84,28 +90,21 @@ func TestActualizarUsuario(t *testing.T) {
 		t.Fatalf("La autenticación falló: %v", err)
 	}
 
-	userID := "a1b5e93f-022a-4982-ad2e-117f5c59f930"
+	// El servicio rechaza datos idénticos a los actuales: el teléfono cambia en cada ejecución
+	telefono := fmt.Sprintf("%010d", time.Now().UnixNano()%10000000000)
 
-	request := &UpdateUserRequest{
-		Name:              nil,
-		TaxID:             nil,
-		IsUnlimited:       nil,
-		IDUser:            userID,
-		NotificationEmail: &[]string{"correo.cambio.sdk@gmail.com"}[0],
-		Phone:             &[]string{"1234567890"}[0],
-	}
-
-	resp, err := ActualizarUsuario(client, userID, request)
+	resp, err := ActualizarUsuario(client, usuarioPruebaID, &UpdateUserRequest{
+		IDUser: usuarioPruebaID,
+		Phone:  &telefono,
+	})
 	if err != nil {
 		t.Fatalf("La actualización de usuario falló: %v", err)
 	}
-
 	if resp.Status != "success" {
 		t.Fatalf("La actualización falló con status: %s", resp.Status)
 	}
 
-	t.Logf("✅ Usuario actualizado exitosamente:")
-	t.Logf("   ID actualizado: %s", resp.Data)
+	t.Logf("✅ Usuario actualizado: %s", resp.Data)
 }
 
 func TestEliminarUsuario(t *testing.T) {

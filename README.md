@@ -425,11 +425,12 @@ go test ./swsdk/validacion -v
 
 ### Notas sobre las pruebas
 
-- Las pruebas de **emisión** y **timbrado** requieren XML sellado válido
+- Las pruebas de **emisión** y **timbrado** usan el CSD de pruebas de `extras/`
 - Las pruebas de **cancelación** requieren certificados válidos
-- Las pruebas de **usuarios** tienen algunos tests con `t.Skip()` por restricciones del API
+- Las pruebas de **usuarios** usan una cuenta de pruebas fija; las de crear y eliminar tienen `t.Skip()`
 - Las pruebas de **balance** funcionan correctamente y muestran información detallada
 - Las pruebas de **validación** funcionan correctamente con archivos XML reales
+- Las pruebas se ejecutan con la hora de la Ciudad de México, la que valida el servicio
 - Para skipear pruebas problemáticas: `go test -skip`
 
 ## Requisitos
