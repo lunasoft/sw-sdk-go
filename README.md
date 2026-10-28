@@ -27,7 +27,7 @@ go get github.com/lunasoft/sw-sdk-go
 
 ### Requisitos
 
-- Go 1.21.0 o superior
+- Go: versión mínima compatible 1.21.0. Se recomienda compilar con una versión de Go con parches de seguridad vigentes (1.26.10 o superior)
 - Acceso a los servicios de SW (test o producción)
 - Credenciales válidas o token infinito
 
