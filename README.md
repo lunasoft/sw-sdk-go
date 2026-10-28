@@ -61,7 +61,7 @@ SW_TOKEN=tu-token-infinito-aqui
 | `SW_USER` | Usuario para autenticación | (vacío) |
 | `SW_PASSWORD` | Contraseña para autenticación | (vacío) |
 | `SW_TOKEN` | Token infinito/fijo | (vacío) |
-| `SW_TIMEOUT` | Tiempo máximo de cada petición HTTP, en segundos (`0` = sin límite; un valor inválido usa `60`) | `60` |
+| `SW_TIMEOUT` | Tiempo máximo de cada petición HTTP, en segundos (`0` = sin límite; un valor inválido usa `30`) | `30` |
 
 ### 🔄 Configuración Programática
 
@@ -503,7 +503,7 @@ Para soporte técnico o reportar bugs:
 
 ### v1.2.0 (2026-10-27)
 - Toolchain actualizado a Go 1.26.10
-- Timeout de 60 s (antes sin límite) en las peticiones de emisión, timbrado, cancelación y usuarios; se ajusta con `SW_TIMEOUT` (`0` = sin límite)
+- Timeout de 30 s (antes sin límite) en las peticiones de emisión, timbrado, cancelación y usuarios; se ajusta con `SW_TIMEOUT` (`0` = sin límite)
 - Pruebas: hora de México y cuenta de usuario fija
 - CI con GitHub Actions
 

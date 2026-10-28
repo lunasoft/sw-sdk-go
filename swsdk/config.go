@@ -74,7 +74,7 @@ func getEnv(key, defaultValue string) string {
 }
 
 // timeoutPorDefecto es el tiempo máximo de cada petición HTTP.
-const timeoutPorDefecto = 60 * time.Second
+const timeoutPorDefecto = 30 * time.Second
 
 // timeoutDesdeEntorno lee SW_TIMEOUT (segundos enteros). Con 0 no hay límite;
 // un valor ausente o inválido usa el valor por defecto.
