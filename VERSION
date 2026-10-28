@@ -1,8 +1,8 @@
 SW SDK Go - Version Information
 ================================
 
-Version: 1.1.0
-Release Date: 2025-01-04
+Version: 1.2.0
+Release Date: 2026-10-27
 Go Version: 1.21.0+
 
 Developer Information:
@@ -33,6 +33,12 @@ Features:
 
 Changelog:
 ----------
+v1.2.0 (2026-10-27):
+- Toolchain actualizado a Go 1.26.10
+- Timeout configurable (SW_TIMEOUT) en todos los clientes HTTP
+- Pruebas: timbrado con sello válido, hora de México y cuenta de usuario fija
+- CI con GitHub Actions
+
 v1.1.0 (2025-01-04):
 - 🔑 Sistema de Token Infinito
 - ✅ Fallback automático a autenticación tradicional

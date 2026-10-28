@@ -2,7 +2,7 @@
 
 SDK oficial de SW (Servicios Web) para Go que permite interactuar con los servicios.
  
-**Versión:** 1.1.0  
+**Versión:** 1.2.0  
 **Licencia:** MIT
 
 ## Características
@@ -435,7 +435,7 @@ go test ./swsdk/validacion -v
 
 ## Requisitos
 
-- Go 1.19 o superior
+- Go 1.21.0 o superior
 - Acceso a los servicios de SW (credenciales válidas)
 
 ## Licencia
@@ -498,6 +498,12 @@ Para soporte técnico o reportar bugs:
 3. Contactar al desarrollador
 
 ## Changelog
+
+### v1.2.0 (2026-10-27)
+- Toolchain actualizado a Go 1.26.10
+- Timeout configurable (`SW_TIMEOUT`) en todos los clientes HTTP
+- Pruebas: timbrado con sello válido, hora de México y cuenta de usuario fija
+- CI con GitHub Actions
 
 ### v1.1.0 (2025-01-04)
 - 🔑 **NUEVO**: Sistema de Token Infinito
