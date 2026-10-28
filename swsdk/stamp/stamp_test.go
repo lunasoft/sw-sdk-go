@@ -4,6 +4,7 @@ import (
 	"os"
 	"testing"
 
+	"github.com/lunasoft/sw-sdk-go/internal/testsupport"
 	"github.com/lunasoft/sw-sdk-go/swsdk/autenticacion"
 	"github.com/lunasoft/sw-sdk-go/swsdk/helpers"
 )
@@ -23,6 +24,11 @@ func TestStampV1(t *testing.T) {
 	err = xmlHelper.PrepararXMLParaTimbrado("cfdi40.xml", xmlPath, "Stamp_1")
 	if err != nil {
 		t.Fatalf("Error al preparar XML para timbrado: %v", err)
+	}
+
+	// Fecha y Folio cambiaron: sellar de nuevo
+	if err := testsupport.SellarCFDI40(xmlPath); err != nil {
+		t.Fatalf("Error al sellar el XML: %v", err)
 	}
 
 	resp, err := StampV1(client, xmlPath)
@@ -56,6 +62,11 @@ func TestStampV2(t *testing.T) {
 	err = xmlHelper.PrepararXMLParaTimbrado("cfdi40.xml", xmlPath, "Stamp_2")
 	if err != nil {
 		t.Fatalf("Error al preparar XML para timbrado: %v", err)
+	}
+
+	// Fecha y Folio cambiaron: sellar de nuevo
+	if err := testsupport.SellarCFDI40(xmlPath); err != nil {
+		t.Fatalf("Error al sellar el XML: %v", err)
 	}
 
 	resp, err := StampV2(client, xmlPath)
@@ -93,6 +104,11 @@ func TestStampV3(t *testing.T) {
 		t.Fatalf("Error al preparar XML para timbrado: %v", err)
 	}
 
+	// Fecha y Folio cambiaron: sellar de nuevo
+	if err := testsupport.SellarCFDI40(xmlPath); err != nil {
+		t.Fatalf("Error al sellar el XML: %v", err)
+	}
+
 	resp, err := StampV3(client, xmlPath)
 	if err != nil {
 		t.Fatalf("El timbrado v3 falló: %v", err)
@@ -124,6 +140,11 @@ func TestStampV4(t *testing.T) {
 	err = xmlHelper.PrepararXMLParaTimbrado("cfdi40.xml", xmlPath, "Stamp_4")
 	if err != nil {
 		t.Fatalf("Error al preparar XML para timbrado: %v", err)
+	}
+
+	// Fecha y Folio cambiaron: sellar de nuevo
+	if err := testsupport.SellarCFDI40(xmlPath); err != nil {
+		t.Fatalf("Error al sellar el XML: %v", err)
 	}
 
 	resp, err := StampV4(client, xmlPath)
