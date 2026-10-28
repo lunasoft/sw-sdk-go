@@ -1,6 +1,7 @@
 package consultaestatus
 
 import (
+	_ "github.com/lunasoft/sw-sdk-go/internal/testsupport"
 	"testing"
 )
 

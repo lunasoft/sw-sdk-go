@@ -2,6 +2,7 @@ package cancelacion
 
 import (
 	"fmt"
+	_ "github.com/lunasoft/sw-sdk-go/internal/testsupport"
 	"os"
 	"path/filepath"
 	"testing"
