@@ -1,7 +1,9 @@
 package swsdk
 
 import (
+	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/joho/godotenv"
@@ -50,7 +52,7 @@ func LoadConfig() *Config {
 		User:       user,
 		Password:   password,
 		Token:      token,
-		Timeout:    time.Duration(30) * time.Second,
+		Timeout:    timeoutDesdeEntorno(),
 
 		AuthEndpoint:            "/security/authenticate",
 		IssueEndpoint:           "/cfdi33/issue",
@@ -69,4 +71,26 @@ func getEnv(key, defaultValue string) string {
 		return value
 	}
 	return defaultValue
+}
+
+// timeoutPorDefecto es el tiempo máximo de cada petición HTTP.
+const timeoutPorDefecto = 30 * time.Second
+
+// timeoutDesdeEntorno lee SW_TIMEOUT (segundos enteros). Con 0 no hay límite;
+// un valor ausente o inválido usa el valor por defecto.
+func timeoutDesdeEntorno() time.Duration {
+	valor := os.Getenv("SW_TIMEOUT")
+	if valor == "" {
+		return timeoutPorDefecto
+	}
+	segundos, err := strconv.Atoi(valor)
+	if err != nil || segundos < 0 {
+		return timeoutPorDefecto
+	}
+	return time.Duration(segundos) * time.Second
+}
+
+// NewHTTPClient crea un cliente HTTP con el timeout de la configuración.
+func NewHTTPClient() *http.Client {
+	return &http.Client{Timeout: LoadConfig().Timeout}
 }

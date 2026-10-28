@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/lunasoft/sw-sdk-go/swsdk"
 	"io"
 	"mime/multipart"
 	"net/http"
@@ -61,7 +62,7 @@ func (r *RequestHelper) SendStampRequest(baseURL, token, xmlPath, version, endpo
 	req.Header.Set("Authorization", "bearer "+token)
 
 	// Ejecutar la petición
-	client := &http.Client{}
+	client := swsdk.NewHTTPClient()
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("error en petición HTTP: %w", err)

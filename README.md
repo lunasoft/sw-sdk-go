@@ -61,6 +61,7 @@ SW_TOKEN=tu-token-infinito-aqui
 | `SW_USER` | Usuario para autenticación | (vacío) |
 | `SW_PASSWORD` | Contraseña para autenticación | (vacío) |
 | `SW_TOKEN` | Token infinito/fijo | (vacío) |
+| `SW_TIMEOUT` | Tiempo máximo de cada petición HTTP, en segundos (`0` = sin límite) | `30` |
 
 ### 🔄 Configuración Programática
 

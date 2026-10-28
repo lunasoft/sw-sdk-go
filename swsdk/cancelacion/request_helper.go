@@ -5,6 +5,7 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
+	"github.com/lunasoft/sw-sdk-go/swsdk"
 	"io"
 	"mime/multipart"
 	"net/http"
@@ -36,7 +37,7 @@ func (r *RequestHelper) SendCancelacionUUIDRequest(baseURL, token, rfc, uuid, mo
 	req.Header.Set("Accept", "*/*")
 
 	// Ejecutar la petición
-	client := &http.Client{}
+	client := swsdk.NewHTTPClient()
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("error en petición HTTP: %w", err)
@@ -88,7 +89,7 @@ func (r *RequestHelper) SendCancelacionCSDRequest(baseURL, token string, request
 	req.Header.Set("Accept", "*/*")
 
 	// Ejecutar la petición
-	client := &http.Client{}
+	client := swsdk.NewHTTPClient()
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("error en petición HTTP: %w", err)
@@ -140,7 +141,7 @@ func (r *RequestHelper) SendCancelacionPFXRequest(baseURL, token string, request
 	req.Header.Set("Accept", "*/*")
 
 	// Ejecutar la petición
-	client := &http.Client{}
+	client := swsdk.NewHTTPClient()
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("error en petición HTTP: %w", err)
@@ -212,7 +213,7 @@ func (r *RequestHelper) SendCancelacionXMLRequest(baseURL, token, xmlPath string
 	req.Header.Set("Accept", "*/*")
 
 	// Ejecutar la petición
-	client := &http.Client{}
+	client := swsdk.NewHTTPClient()
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("error en petición HTTP: %w", err)
