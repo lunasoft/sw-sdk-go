@@ -425,7 +425,7 @@ go test ./swsdk/validacion -v
 
 ### Notas sobre las pruebas
 
-- Las pruebas de **emisión** y **timbrado** usan el CSD de pruebas de `extras/`
+- Las pruebas de **emisión** y **timbrado** requieren XML sellado válido
 - Las pruebas de **cancelación** requieren certificados válidos
 - Las pruebas de **usuarios** usan una cuenta de pruebas fija; las de crear y eliminar tienen `t.Skip()`
 - Las pruebas de **balance** funcionan correctamente y muestran información detallada
@@ -502,7 +502,7 @@ Para soporte técnico o reportar bugs:
 ### v1.2.0 (2026-10-27)
 - Toolchain actualizado a Go 1.26.10
 - Timeout configurable (`SW_TIMEOUT`) en todos los clientes HTTP
-- Pruebas: timbrado con sello válido, hora de México y cuenta de usuario fija
+- Pruebas: hora de México y cuenta de usuario fija
 - CI con GitHub Actions
 
 ### v1.1.0 (2025-01-04)
