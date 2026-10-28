@@ -1,8 +1,9 @@
 package balance
 
 import (
-	_ "github.com/lunasoft/sw-sdk-go/internal/testsupport"
 	"testing"
+
+	_ "github.com/lunasoft/sw-sdk-go/internal/testsupport"
 )
 
 const testUserID = "ee119c6a-5548-4c5e-b693-00f8195d4f93"

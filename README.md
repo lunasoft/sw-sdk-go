@@ -61,7 +61,7 @@ SW_TOKEN=tu-token-infinito-aqui
 | `SW_USER` | Usuario para autenticación | (vacío) |
 | `SW_PASSWORD` | Contraseña para autenticación | (vacío) |
 | `SW_TOKEN` | Token infinito/fijo | (vacío) |
-| `SW_TIMEOUT` | Tiempo máximo de cada petición HTTP, en segundos (`0` = sin límite) | `30` |
+| `SW_TIMEOUT` | Tiempo máximo de cada petición HTTP, en segundos (`0` = sin límite; un valor inválido usa `60`) | `60` |
 
 ### 🔄 Configuración Programática
 
@@ -75,6 +75,8 @@ config := swsdk.LoadConfig()
 config.User = "otro-usuario@sw.com.mx"
 config.Token = "otro-token"
 ```
+
+El timeout de las peticiones se configura con `SW_TIMEOUT`; asignar `config.Timeout` no lo modifica.
 
 ### 🔑 Sistema de Autenticación
 
@@ -425,7 +427,7 @@ go test ./swsdk/validacion -v
 
 ### Notas sobre las pruebas
 
-- Las pruebas de **emisión** y **timbrado** requieren XML sellado válido
+- Las pruebas de **timbrado** requieren XML sellado válido y están omitidas (`t.Skip()`)
 - Las pruebas de **cancelación** requieren certificados válidos
 - Las pruebas de **usuarios** usan una cuenta de pruebas fija; las de crear y eliminar tienen `t.Skip()`
 - Las pruebas de **balance** funcionan correctamente y muestran información detallada
@@ -501,7 +503,7 @@ Para soporte técnico o reportar bugs:
 
 ### v1.2.0 (2026-10-27)
 - Toolchain actualizado a Go 1.26.10
-- Timeout configurable (`SW_TIMEOUT`) en todos los clientes HTTP
+- Timeout de 60 s (antes sin límite) en las peticiones de emisión, timbrado, cancelación y usuarios; se ajusta con `SW_TIMEOUT` (`0` = sin límite)
 - Pruebas: hora de México y cuenta de usuario fija
 - CI con GitHub Actions
 

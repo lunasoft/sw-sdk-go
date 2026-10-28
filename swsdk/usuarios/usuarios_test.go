@@ -81,6 +81,7 @@ func TestListarUsuarios(t *testing.T) {
 }
 
 // usuarioPruebaID es la cuenta hija fija de pruebas (sandbox, 0 timbres).
+// Si las credenciales cambian de dealer, la prueba falla con 403 "User no pertenece al Dealer": crear otra cuenta y actualizar este ID.
 const usuarioPruebaID = "29208a11-d22a-4e22-8c0f-35cd4a173e74"
 
 func TestActualizarUsuario(t *testing.T) {

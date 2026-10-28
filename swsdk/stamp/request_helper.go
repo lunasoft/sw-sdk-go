@@ -4,12 +4,13 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/lunasoft/sw-sdk-go/swsdk"
 	"io"
 	"mime/multipart"
 	"net/http"
 	"os"
 	"path/filepath"
+
+	"github.com/lunasoft/sw-sdk-go/swsdk"
 )
 
 // RequestHelper maneja todas las peticiones HTTP

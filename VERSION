@@ -35,7 +35,7 @@ Changelog:
 ----------
 v1.2.0 (2026-10-27):
 - Toolchain actualizado a Go 1.26.10
-- Timeout configurable (SW_TIMEOUT) en todos los clientes HTTP
+- Timeout de 60 s (antes sin límite) en las peticiones de emisión, timbrado, cancelación y usuarios; se ajusta con SW_TIMEOUT (0 = sin límite)
 - Pruebas: hora de México y cuenta de usuario fija
 - CI con GitHub Actions
 

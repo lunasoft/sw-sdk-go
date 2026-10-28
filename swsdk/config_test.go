@@ -11,11 +11,11 @@ func TestTimeoutDesdeEntorno(t *testing.T) {
 		valor  string
 		quiere time.Duration
 	}{
-		{"sin definir usa el valor por defecto", "", 30 * time.Second},
+		{"sin definir usa el valor por defecto", "", 60 * time.Second},
 		{"segundos válidos", "90", 90 * time.Second},
 		{"cero significa sin límite", "0", 0},
-		{"valor inválido usa el valor por defecto", "abc", 30 * time.Second},
-		{"negativo usa el valor por defecto", "-5", 30 * time.Second},
+		{"valor inválido usa el valor por defecto", "abc", 60 * time.Second},
+		{"negativo usa el valor por defecto", "-5", 60 * time.Second},
 	}
 	for _, c := range casos {
 		t.Run(c.nombre, func(t *testing.T) {
