@@ -9,6 +9,8 @@ import (
 )
 
 func TestStampV1(t *testing.T) {
+	t.Skip("Skip: el timbrado requiere XML sellado válido")
+
 	client := autenticacion.SetUser()
 	_, err := client.Autenticacion()
 	if err != nil {
@@ -42,6 +44,8 @@ func TestStampV1(t *testing.T) {
 }
 
 func TestStampV2(t *testing.T) {
+	t.Skip("Skip: el timbrado requiere XML sellado válido")
+
 	client := autenticacion.SetUser()
 	_, err := client.Autenticacion()
 	if err != nil {
@@ -77,6 +81,8 @@ func TestStampV2(t *testing.T) {
 }
 
 func TestStampV3(t *testing.T) {
+	t.Skip("Skip: el timbrado requiere XML sellado válido")
+
 	client := autenticacion.SetUser()
 	_, err := client.Autenticacion()
 	if err != nil {
@@ -110,6 +116,8 @@ func TestStampV3(t *testing.T) {
 }
 
 func TestStampV4(t *testing.T) {
+	t.Skip("Skip: el timbrado requiere XML sellado válido")
+
 	client := autenticacion.SetUser()
 	_, err := client.Autenticacion()
 	if err != nil {

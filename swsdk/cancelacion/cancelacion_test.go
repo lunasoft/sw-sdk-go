@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
+	_ "github.com/lunasoft/sw-sdk-go/internal/testsupport"
 	"github.com/lunasoft/sw-sdk-go/swsdk/autenticacion"
 )
 

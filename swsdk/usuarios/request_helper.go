@@ -40,7 +40,7 @@ func (r *RequestHelper) SendCreateUserRequest(baseURL, token string, request *Cr
 	req.Header.Set("Authorization", "bearer "+token)
 	req.Header.Set("Accept", "*/*")
 
-	client := &http.Client{}
+	client := swsdk.NewHTTPClient()
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("error en petición HTTP: %w", err)
@@ -96,7 +96,7 @@ func (r *RequestHelper) SendListUsersRequest(baseURL, token string, params *List
 	req.Header.Set("Authorization", "bearer "+token)
 	req.Header.Set("Accept", "*/*")
 
-	client := &http.Client{}
+	client := swsdk.NewHTTPClient()
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("error en petición HTTP: %w", err)
@@ -141,7 +141,7 @@ func (r *RequestHelper) SendUpdateUserRequest(baseURL, token, userID string, req
 	req.Header.Set("Authorization", "bearer "+token)
 	req.Header.Set("Accept", "*/*")
 
-	client := &http.Client{}
+	client := swsdk.NewHTTPClient()
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, fmt.Errorf("error en petición HTTP: %w", err)
@@ -180,7 +180,7 @@ func (r *RequestHelper) SendDeleteUserRequest(baseURL, token, userID string) err
 	req.Header.Set("Authorization", "bearer "+token)
 	req.Header.Set("Accept", "*/*")
 
-	client := &http.Client{}
+	client := swsdk.NewHTTPClient()
 	resp, err := client.Do(req)
 	if err != nil {
 		return fmt.Errorf("error en petición HTTP: %w", err)

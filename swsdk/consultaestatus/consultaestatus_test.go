@@ -2,6 +2,8 @@ package consultaestatus
 
 import (
 	"testing"
+
+	_ "github.com/lunasoft/sw-sdk-go/internal/testsupport"
 )
 
 func TestConsultarEstatus(t *testing.T) {
